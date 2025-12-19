@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>lag</title>
+    <link rel="icon" type="image/png" href="GQYY990WUAArhXL-removebg-preview.png">
+
+    <!-- FIXED: styles.css -->
+    <link href="syles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Minimal modal CSS — you can move this into styles.css */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 24px;
+            cursor: zoom-out; /* hint you can click to close */
+        }
+        .modal img {
+            max-width: 95vw;
+            max-height: 90vh;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.4);
+            cursor: default;
+        }
+        .modal .close {
+            position: absolute;
+            top: 16px;
+            right: 22px;
+            font-size: 40px;
+            color: #fff;
+            line-height: 1;
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+
+<header class="band band--top">
+    <div class="nav container">
+        <div class="nav__left">
+
+        </div>
+
+        <nav class="nav__right" style="padding-right: 30px">
+            <a href="https://dexscreener.com/solana/" class="nav__link">dex</a>
+            <a href="https://x.com/" class="nav__link">community</a>
+
+        </nav>
+    </div>
+    <div class="hero container">
+        <img src="GQYY990WUAArhXL-removebg-preview.png" alt="Dwerk Meme" class="hero__gif">
+        <p class="hero__sub" id="ca">
+            <span class="c1">x</span>
+            <span class="c2">x</span>
+            <span class="c3">x</span>
+            <span class="c4">x</span>
+            <span class="c5">x</span>
+            <span class="c1">x</span>
+            <span class="c2">x</span>
+            <span class="c3">x</span>
+            <span class="c4">x</span>
+            <span class="c5">x</span>
+            <span class="c1">x</span>
+            <span class="c2">x</span>
+            <span class="c3">x</span>
+            <span class="c4">x</span>
+            <span class="c5">x</span>
+            <span class="c1">X</span>
+            <span class="c2">x</span>
+            <span class="c3">x</span>
+            <span class="c4">x</span>
+            <span class="c5">x</span>
+            <span class="c1">x</span>
+            <span class="c2">x</span>
+            <span class="c3">x</span>
+            <span class="c4">x</span>
+            <span class="c5">x</span>
+            <span class="c1">x</span>
+            <span class="c2">x</span>
+            <span class="c3">x</span>
+            <span class="c4">x</span>
+            <span class="c5">x</span>
+            <span class="c1">x</span>
+            <span class="c2">x</span>
+            <span class="c3">x</span>
+            <span class="c4">x</span>
+            <span class="c5">x</span>
+            <span class="c1">x</span>
+            <span class="c2">x</span>
+            <span class="c3">x</span>
+            <span class="c4">x</span>
+            <span class="c5">x</span>
+            <span class="c1">x</span>
+            <span class="c2">x</span>
+            <span class="c3">x</span>
+            <span class="c4">x</span>
+            <span class="c5">x</span>
+        </p>
+        <div class="btn-group">
+            <button id="copyBtn" class="btn">Copy</button>
+            <a class="btn" href="https://pump.fun/coin">get Lag</a>
+        </div>
+
+    </div>
+</header>
+
+<main class="content">
+    <section class="container section">
+
+        <h2 class="section__title">
+            <span class="c1">L</span>
+            <span class="c2">a</span>
+            <span class="c5">g</span>
+            &nbsp;
+            <span class="c1">M</span>
+            <span class="c2">E</span>
+            <span class="c3">M</span>
+            <span class="c4">E</span>
+            <span class="c5">S</span>
+        </h2>
+        <div class="grid">
+            <img src="1.jpg" alt="meme 1" onclick="openModal(this.src)">
+            <img src="2.jpg" alt="meme 2" onclick="openModal(this.src)">
+            <img src="3.jpg" alt="meme 3" onclick="openModal(this.src)">
+            <img src="4.jpg" alt="meme 4" onclick="openModal(this.src)">
+            
+        </div>
+    </section>
+
+</main>
+
+
+<!-- ADD: modal markup -->
+<div id="modal" class="modal" onclick="closeModal(event)">
+    <span class="close" aria-label="Close">&times;</span>
+    <img id="modalImg" alt="">
+</div>
+
+<script>
+    function openModal(src) {
+        const modal = document.getElementById('modal');
+        const img = document.getElementById('modalImg');
+        img.src = src;
+        modal.style.display = 'flex';
+        // optional: lock background scroll
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close when clicking overlay or the X (but not when clicking the image itself)
+    function closeModal(e) {
+        const modal = document.getElementById('modal');
+        if (e.target.id === 'modal' || e.target.classList.contains('close')) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Also close on ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.getElementById('modal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+</script>
+<script>
+    document.getElementById("copyBtn").addEventListener("click", () => {
+        navigator.clipboard.writeText("GfbDMqVTpzK1QZ4iYJtQ4HBHr1TjHpw3wTyfb7KSpump").then(() => {
+            alert("Wallet copied: " + GfbDMqVTpzK1QZ4iYJtQ4HBHr1TjHpw3wTyfb7KSpump);
+        }).catch(err => {
+            console.error("Failed to copy: ", err);
+        });
+    });
+</script>
+
+</body>
+</html>
